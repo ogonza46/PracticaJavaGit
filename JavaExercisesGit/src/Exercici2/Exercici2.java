@@ -1,64 +1,47 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Exercici2;
 import java.lang.*;
 
 /**
  * Exercici2 modul 15_UF1
- * @author alumne
+ * @author jsauch
  */
 public class Exercici2 {
     /**
      * String gString the given string.
      * String rString the reversed given string.
      */
-    String gString ;
+    String gString;
     String rString; 
 
     public Exercici2(String gString) {
-        this.gString = gString;
+        this.gString = specialChars(gString);
+        this.rString = reverseString();
     }
 
     public Exercici2() {
     }
-        
+    
+    public void setgString(String gString) {
+        this.gString = specialChars(gString);
+        this.rString = reverseString();
+    }
+    
     public String getgString() {
         return gString;
     }
-
-    public void setgString(String gString) {
-        this.gString = gString;
-    }
-
+    
     public String getrString() {
         return rString;
     }
-
-    public void setrString(String rString) {
-        this.rString = rString;
-    }
     
-    
-        
-    public static void main (String[] args) {
-        Exercici2 myApp = new Exercici2();
-        myApp.run();
-    }
     /**
-     * 
+     * Cleans the input string from white spaces and/or punctuaction marks.
+     * @param clString the string to be cleaned.
+     * @return  outString the cleaned string.
      */
-    public void run(){
-        gString = gString.toLowerCase().replaceAll("[ .,`´`!?¿¡]", "");
-        System.out.println(gString);
-        String rString = reverseString(gString);
-        if(palindrom(gString, rString)){
-            System.out.println("La cadena és palíndroma.");
-        } else{
-            System.out.println("La cadena NO és palíndroma.");
-        }
+    private String specialChars (String inString) {
+        String outString = inString.toLowerCase().replaceAll("[ .,;:'`´`!?¿¡]", "");
+        return outString;
     }
     
     /**
@@ -66,19 +49,18 @@ public class Exercici2 {
      * @param string the string to reverse 
      * @return the reversed string.
      */
-    public String reverseString (String string){
-        StringBuilder revString = new StringBuilder(string);
-               
+    private String reverseString (){
+        StringBuilder revString = new StringBuilder(gString);
         return revString.reverse().toString();
     }
     
     /**
-     * Checks if a string is a palindrom.
+     * Checks if a string is a palindrome.
      * @param gString the original string.
      * @param rString the reversed string.
-     * @return true if the string is palindrom false if the string isn't.
+     * @return true if the string is palindrome false if the string isn't.
      */
-    public boolean palindrom (String gString, String rString){
+    public boolean palindrom (){
         boolean flag=true;
         for(int i=0;i<gString.length();i++){
             if(gString.charAt(i)!=rString.charAt(i)){
