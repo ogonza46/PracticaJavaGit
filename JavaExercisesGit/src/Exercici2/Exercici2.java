@@ -6,12 +6,12 @@ import java.lang.*;
  * @author jsauch
  */
 public class Exercici2 {
-    /**
+    /*
      * String gString the given string.
      * String rString the reversed given string.
      */
-    String gString;
-    String rString; 
+    private String gString;
+    private String rString; 
 
     public Exercici2(String gString) {
         this.gString = specialChars(gString);
