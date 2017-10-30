@@ -9,14 +9,15 @@ import java.lang.*;
  */ 
 public class Exercici1JSP {
     
-        String name = "oliver";
     
     public static void main(String[] args) {
         Exercici1JSP game = new Exercici1JSP();
         game.run();
     }
     /**
-     * 
+     * This method will run the program
+     * @author oliverG
+     * @version 1.0
      */
     public void run() {
         String name = inputString("Cuál es tu nombre? ");
@@ -27,14 +28,26 @@ public class Exercici1JSP {
         int countCons = toCountCons(name);
         System.out.println("Hay "+countVoc+" vocales y "+countCons+" consonantes.");
     }
-    
+    /**
+     * Method that you put a message and return the answer at this message
+     * @author oliverG
+     * @version 1.0
+     * @param message
+     * @return string
+     */
     private String inputString(String message) {
         System.out.print(message);
         Scanner scan = new Scanner(System.in);
         String answer = scan.next();
         return answer;
     }
-
+    /**
+     * This method recive a string and transform vocals to UPPER
+     * @author oliverG
+     * @version 1.0
+     * @param name
+     * @return name 
+     */
     private String toUpperVocals(String name) {
         //bucle que recorra string caracter a carcter y lo meta en un array de char
         char[] charArray = name.toCharArray();
@@ -47,8 +60,15 @@ public class Exercici1JSP {
         name = new String(charArray);
         return name;
     }
-
+    /**
+     * This method recive a string, count vocals and return how much vocals are.
+     * @author oliverG
+     * @version 1.0
+     * @param name
+     * @return count
+     */
     private int toCountVocals(String name) {
+        name.toLowerCase();
         int count = 0;
         for(int i=0;i<name.length();i++){
             if(name.charAt(i)=='a' || name.charAt(i) == 'e' || name.charAt(i) == 'i' || name.charAt(i) == 'o' || name.charAt(i) == 'u'){
@@ -57,7 +77,13 @@ public class Exercici1JSP {
         }
         return count;
     }
-
+    /**
+     * This method recive a string, count consonants and return how much consonants are.
+     * @author oliverG
+     * @version 1.0
+     * @param name
+     * @return count
+     */
     private int toCountCons(String name) {
         int count = 0;
         for(int i=0;i<name.length();i++){
