@@ -24,6 +24,7 @@ public class Exercici1JSP {
         name = name.toLowerCase();
         name = toUpperVocals(name);
         System.out.println(name);
+        name = name.toLowerCase();
         int countVoc = toCountVocals(name);
         int countCons = toCountCons(name);
         System.out.println("Hay "+countVoc+" vocales y "+countCons+" consonantes.");
@@ -87,7 +88,7 @@ public class Exercici1JSP {
     private int toCountCons(String name) {
         int count = 0;
         for(int i=0;i<name.length();i++){
-            if(name.charAt(i) !='a' || name.charAt(i) != 'e' || name.charAt(i) != 'i' || name.charAt(i) != 'o' || name.charAt(i) != 'u'){
+            if(name.charAt(i) !='a' && name.charAt(i) != 'e' && name.charAt(i) != 'i' && name.charAt(i) != 'o' && name.charAt(i) != 'u'){
                 count++;
             }
         }
