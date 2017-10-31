@@ -33,13 +33,13 @@ public class Exercici6 {
         
     }
     /**
-     * 
+     * Reverses the introduced string.
      * @param seq
      * @return 
      */
     public String revSeq(String seq){
-        //TODO
-        return "ATTACA";
+        StringBuilder result = new StringBuilder(seq);
+        return result.reverse().toString();
     }
     
     /**
