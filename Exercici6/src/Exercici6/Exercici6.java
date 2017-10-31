@@ -12,6 +12,11 @@ import java.util.*;
  * @author Oliver Josep
  */
 public class Exercici6 {
+    
+    String [] menu = {
+      "Reverse sequence", "Count most repeated base", "Count less repeated base",
+        "Recount bases", "exit"
+    };
     public static void main(String[] args) {
         Exercici6 myApp =  new Exercici6();
         myApp.run();
@@ -29,8 +34,26 @@ public class Exercici6 {
         */
     }
     
-    public void menu(){
-        
+    /**
+     * shows the main menu of the application and reads
+     * and option from the user.
+     * @return an int with the option selected by user
+     * or -1 in case of error.
+     */
+    private int menu() {
+        //print menu
+        for (int i=0; i<menu.length; i++) {
+            System.out.format("%d. %s\n", i, menu[i]);
+        }
+        int option;
+        System.out.print("Input an option: ");
+        try {
+            Scanner scan = new Scanner(System.in);
+            option = scan.nextInt();            
+        } catch (InputMismatchException e) {
+            option = -1;
+        }       
+        return option;
     }
     /**
      * 
