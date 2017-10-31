@@ -47,9 +47,13 @@ public class Exercici6 {
      * @param seq
      * @return 
      */
-    public int countMax(String seq){
+    public Map countMax(String seq){
+        Map <String, Integer> result;
+        result = new HashMap<String, Integer>();
         
-        return 100;
+        
+        
+        return result;
     }
     
     /**
@@ -57,9 +61,9 @@ public class Exercici6 {
      * @param seq
      * @return 
      */
-    public int countMin(String seq){
+    public Map countMin(String seq){
         
-        return 0;
+        return null;
     }
     
     /**
